@@ -17,8 +17,7 @@
 
 SRC_DIR = src/
 
-SRC = $(SRC_DIR)operation.c   \
-      $(SRC_DIR)eval_expr.c   \
+SRC = $(SRC_DIR)eval_expr.c   \
 
 
 MAIN_SRC = main.c
