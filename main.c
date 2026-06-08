@@ -17,7 +17,7 @@ void  my_putstr(char const *);
 int   my_strlen(char const *);
 int   my_atoi(char const *);
 
-static char  *get_expr(unsigned int size)
+static char *get_expr(unsigned int size)
 {
     char *expr;
 
@@ -54,7 +54,7 @@ static void check_base(char const *b)
     }
 }
 
-int             main(int ac, char **av)
+int main(int ac, char **av)
 {
     unsigned int size;
     char *expr;
