@@ -10,11 +10,6 @@
 #include <string.h>
 #include "bistromatic.h"
 
-/*
-** Replace these lines with an include of a header file containing these prototypes
-*/
-int   my_atoi(char const *);
-
 static char *get_expr(unsigned int size)
 {
     char *expr;
@@ -34,6 +29,19 @@ static char *get_expr(unsigned int size)
     }
     expr[size] = 0;
     return (expr);
+}
+
+int check_flag_h(int argc, char **argv)
+{
+    if (argc == 2 && strcmp(argv[1], "-h") == 0) {
+        my_printf("USAGE\n./calc base operators size_read\n\n");
+        my_printf("DESCRIPTIONS\n- base: all the symbols of the base\n");
+        my_printf("- operators: the symbols for the parentheses and the");
+        my_printf("5 operators\n");
+        my_printf("- size_read: number of characters to be read");
+        return 1;
+    }
+    return 0;
 }
 
 static void check_ops(char const *ops)
@@ -57,6 +65,8 @@ int main(int ac, char **av)
     unsigned int size;
     char *expr;
 
+    if (check_flag_h(ac, av) == 1)
+        return 0;
     if (ac != 4) {
         my_putstr("Usage: ");
         my_putstr(av[0]);

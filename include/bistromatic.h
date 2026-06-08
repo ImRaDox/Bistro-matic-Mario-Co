@@ -9,7 +9,7 @@
     #define INCLUDED_MY_H
     #include "my.h"
 
-    #define OP_OPEN_PARENT_IDX  0
+    #define OP_OPEN_PARENT_IDX 0
     #define OP_CLOSE_PARENT_IDX 1
     #define OP_PLUS_IDX 2
     #define OP_SUB_IDX 3
@@ -29,5 +29,5 @@
     #define ERROR_MSG "error"
 
 char *eval_expr(char const *base, char const *ops,
-		char const *expr, unsigned int size);
+    char const *expr, unsigned int size);
 #endif
