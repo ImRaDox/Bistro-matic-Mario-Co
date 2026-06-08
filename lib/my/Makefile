@@ -11,6 +11,7 @@ CC		=	epiclang
 CFLAGS	=	-Wall -Wextra -Werror
 
 SRC		=	my_getnbr.c			\
+			my_atoi.c			\
 			my_printf.c			\
 			my_put_nbr.c		\
 			my_putchar.c		\
@@ -55,5 +56,6 @@ fclean:	clean
 	rm -f $(NAME)
 
 re:	fclean all
+	rm -f $(OBJ)
 
 .PHONY:	all clean fclean re

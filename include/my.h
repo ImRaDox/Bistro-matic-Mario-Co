@@ -30,6 +30,7 @@ int my_putchar(char c);
 int my_put_nbr(int nb);
 int my_putstr(char const *str);
 int my_getnbr(char const *str);
+int my_atoi(char const *str);
 char *my_strdup(char const *src);
 char *my_strndup(char const *src, int n);
 char *my_strcat(char *dest, char const *src);
