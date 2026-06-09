@@ -5,7 +5,7 @@
 ** add.c
 */
 
-#include <stdlib.h>
+#include "my.h"
 
 int get_digit_val(char *nb, int len, int i, char *base)
 {
