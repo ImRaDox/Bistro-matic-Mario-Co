@@ -22,8 +22,11 @@ char *my_add(char *nb1, char *nb2, char *base)
     int carry = 0;
     int i = 0;
     int sum = 0;
-    char *result = malloc(sizeof(char) * (len1 + len2 + 2));
+    char *result = NULL;
 
+    result = malloc(sizeof(char) * (len1 + len2 + 2));
+    if (!result)
+        return NULL;
     for (; i < len1 || i < len2 || carry; i++) {
         sum = carry;
         sum += get_digit_val(nb1, len1, i, base);
