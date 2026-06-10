@@ -122,5 +122,5 @@ int main(int ac, char **av)
     expr = get_expr(size);
     my_putstr(eval_expr(av[1], av[2], expr, size));
     free(expr);
-    return (EXIT_SUCCESS);
+    return (1);
 }
