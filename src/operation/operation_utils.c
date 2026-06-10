@@ -5,6 +5,8 @@
 ** operation_utils.c
 */
 
+#include "my.h"
+
 int get_index_in_base(char c, char *base)
 {
     int i = 0;
@@ -30,4 +32,11 @@ char *my_revstr(char *str)
         str[len - 1 - i] = temp;
     }
     return (str);
+}
+
+int get_digit_val(char *nb, int len, int i, char *base)
+{
+    if (i < len)
+        return (get_index_in_base(nb[len - 1 - i], base));
+    return (0);
 }

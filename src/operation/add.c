@@ -7,13 +7,6 @@
 
 #include "my.h"
 
-int get_digit_val(char *nb, int len, int i, char *base)
-{
-    if (i < len)
-        return (get_index_in_base(nb[len - 1 - i], base));
-    return (0);
-}
-
 char *my_add(char *nb1, char *nb2, char *base)
 {
     int len1 = my_strlen(nb1);
