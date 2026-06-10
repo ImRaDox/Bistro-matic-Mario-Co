@@ -18,11 +18,9 @@ char *parse_expr(char **str, char const *base, char const *ops)
         (*str)++;
         b = parse_term(str, base, ops);
         if (op == ops[OP_PLUS_IDX])
-        /*Addition*/
-            a = ;
+            a = my_add(a, b, base);
         else
-        /*Soustraction*/
-            a = ;
+            a = my_sub(a, b, base);
     }
     return a;
 }
