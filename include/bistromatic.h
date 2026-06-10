@@ -32,4 +32,6 @@ char *eval_expr(char const *base, char const *ops,
     char const *expr, unsigned int size);
 
 char *my_add(char *nb1, char *nb2, char *base);
+
+char *my_sub(char *nb1, char *nb2, char *base);
 #endif

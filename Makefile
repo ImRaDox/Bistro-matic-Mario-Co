@@ -16,10 +16,13 @@
 ## ----------------------------------------------------------------------------------- ##
 
 SRC_DIR = src/
+OPE_DIR = src/operation/
 
 SRC = $(SRC_DIR)eval_expr.c   \
-
-
+	  $(OPE_DIR)add.c\
+	  $(OPE_DIR)sub.c\
+	  $(OPE_DIR)operation_utils.c\
+	  
 MAIN_SRC = main.c
 TESTS_DIR = test/
 FUNC_TESTS_DIR = test/test_fonctions/

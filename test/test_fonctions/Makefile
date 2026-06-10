@@ -13,6 +13,7 @@ LDFLAGS	=	-L../../lib/my -lmy
 
 SRC		=	test_fonctions.c	\
 			../../src/operation/add.c	\
+			../../src/operation/sub.c	\
 			../../src/operation/operation_utils.c
 
 OBJ		=	$(SRC:.c=.o)

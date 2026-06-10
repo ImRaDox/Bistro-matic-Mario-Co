@@ -43,4 +43,3 @@ char *my_sub(char *nb1, char *nb2, char *base)
     result[i] = '\0';
     return (my_revstr(result));
 }
-
