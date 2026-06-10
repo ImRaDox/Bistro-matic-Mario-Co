@@ -28,8 +28,11 @@ char *my_sub(char *nb1, char *nb2, char *base)
     int i = 0;
     int d1 = 0;
     int d2 = 0;
-    char *result = malloc(sizeof(char) * (len1 + 1));
+    char *result = NULL;
 
+    result = malloc(sizeof(char) * (len1 + 1));
+    if (!result)
+        return NULL;
     for (; i < len1; i++) {
         d1 = get_digit_val(nb1, len1, i, base);
         d2 = get_digit_val(nb2, len2, i, base);
