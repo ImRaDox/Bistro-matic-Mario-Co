@@ -13,6 +13,7 @@ char *parse_term(char **str, char const *base, char const *ops)
     char op;
     char *b;
 
+    skip_spaces(str);
     while (**str == ops[OP_MULT_IDX] || **str == ops[OP_DIV_IDX]
         || **str == ops[OP_MOD_IDX]) {
         op = **str;
@@ -21,9 +22,10 @@ char *parse_term(char **str, char const *base, char const *ops)
         if (op == ops[OP_MULT_IDX])
             a = my_mul(a, b, base);;
         if (op == ops[OP_DIV_IDX])
-            my_printf("Div Not implemented");
+            my_printf("Div implemented");
         if (op == ops[OP_MOD_IDX])
-            my_printf("Mod Not implemented");
+            my_printf("Not implemented");
+        skip_spaces(str);
     }
     return a;
 }
