@@ -18,8 +18,8 @@ static char *get_expr(unsigned int size)
         my_putstr(SYNTAX_ERROR_MSG);
         exit(EXIT_SIZE_NEG);
     }
-    expr = malloc(sizeof(char) * (size + 1));
-    if (expr == NULL) {
+    expr = malloc(size + 1);
+    if (expr == 0) {
         my_putstr(ERROR_MSG);
         exit(EXIT_MALLOC);
     }
@@ -27,7 +27,7 @@ static char *get_expr(unsigned int size)
         my_putstr(ERROR_MSG);
         exit(EXIT_READ);
     }
-    expr[size] = '\0';
+    expr[size] = 0;
     return (expr);
 }
 
@@ -38,7 +38,7 @@ int check_flag_h(int argc, char **argv)
         my_printf("DESCRIPTIONS\n- base: all the symbols of the base\n");
         my_printf("- operators: the symbols for the parentheses and the");
         my_printf("5 operators\n");
-        my_printf("- size_read: number of characters to be read\n");
+        my_printf("- size_read: number of characters to be read");
         return 1;
     }
     return 0;
