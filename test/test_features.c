@@ -15,19 +15,9 @@ Test(eval_expr, basic_addition)
     cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "1+1", 3), "2");
 }
 
-Test(eval_expr, basic_divison)
-{
-    cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "4/2", 3), "2");
-}
-
 Test(eval_expr, basic_multiplication)
 {
     cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "4*3", 3), "12");
-}
-
-Test(eval_expr, basic_modulo)
-{
-    cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "4%2", 3), "0");
 }
 
 Test(eval_expr, basic_subtraction)

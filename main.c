@@ -33,7 +33,7 @@ static char *get_expr(unsigned int size)
 
 int check_flag_h(int argc, char **argv)
 {
-    if (argc == 2 && strcmp(argv[1], "-h") == 0) {
+    if (argc == 2 && my_strcmp(argv[1], "-h") == 0) {
         my_printf("USAGE\n./calc base operators size_read\n\n");
         my_printf("DESCRIPTIONS\n- base: all the symbols of the base\n");
         my_printf("- operators: the symbols for the parentheses and the");
