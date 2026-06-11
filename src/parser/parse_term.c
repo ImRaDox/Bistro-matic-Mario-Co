@@ -19,14 +19,11 @@ char *parse_term(char **str, char const *base, char const *ops)
         (*str)++;
         b = parse_factor(str, base, ops);
         if (op == ops[OP_MULT_IDX])
-        /*Multiplication*/
-            a = a;
+            a = my_mul(a, b, base);;
         if (op == ops[OP_DIV_IDX])
-        /*Division*/
-            a = a;
+            my_printf("Div Not implemented");
         if (op == ops[OP_MOD_IDX])
-        /*Modulo*/
-            a = a;
+            my_printf("Mod Not implemented");
     }
     return a;
 }
