@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-int get_index_in_base(char c, char *base)
+int get_index_in_base(char c, char const *base)
 {
     int i = 0;
 
@@ -34,7 +34,7 @@ char *my_revstr(char *str)
     return (str);
 }
 
-int get_digit_val(char *nb, int len, int i, char *base)
+int get_digit_val(char *nb, int len, int i, char const *base)
 {
     if (i < len)
         return (get_index_in_base(nb[len - 1 - i], base));

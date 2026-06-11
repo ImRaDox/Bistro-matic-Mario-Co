@@ -13,11 +13,12 @@ char *parse_expr(char **str, char const *base, char const *ops)
     char op;
     char *b;
 
-    while (**str == ops[OP_PLUS_IDX] || **str == ops[OP_SUB_IDX]) {
+    while (**str == get_operator(ops, OP_PLUS_IDX)
+        || **str == get_operator(ops, OP_SUB_IDX)) {
         op = **str;
         (*str)++;
         b = parse_term(str, base, ops);
-        if (op == ops[OP_PLUS_IDX])
+        if (op == get_operator(ops, OP_PLUS_IDX))
             a = my_add(a, b, base);
         else
             a = my_sub(a, b, base);

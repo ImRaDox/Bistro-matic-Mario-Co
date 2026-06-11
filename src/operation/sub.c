@@ -19,7 +19,7 @@ static int subtract_digit(int d1, int d2, int b_len, int *borrow)
     return diff;
 }
 
-char *my_sub(char *nb1, char *nb2, char *base)
+char *my_sub(char *nb1, char *nb2, char const *base)
 {
     int len1 = my_strlen(nb1);
     int len2 = my_strlen(nb2);

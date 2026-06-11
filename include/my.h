@@ -88,8 +88,8 @@ int my_abs(int n);
 int my_max(int a, int b);
 int my_min(int a, int b);
 int my_power(int base, int exp);
-int get_index_in_base(char c, char *base);
-int get_digit_val(char *nb, int len, int i, char *base);
+int get_index_in_base(char c, char const *base);
+int get_digit_val(char *nb, int len, int i, char const *base);
 
 /* ===== ERROR ===== */
 int my_puterr(char const *msg);

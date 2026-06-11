@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-char *my_add(char *nb1, char *nb2, char *base)
+char *my_add(char *nb1, char *nb2, char const *base)
 {
     int len1 = my_strlen(nb1);
     int len2 = my_strlen(nb2);

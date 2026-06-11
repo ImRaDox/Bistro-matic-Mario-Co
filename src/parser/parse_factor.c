@@ -11,10 +11,11 @@ char *parse_factor(char **str, char const *base, char const *ops)
 {
     char *a;
 
-    if (**str == ops[OP_OPEN_PARENT_IDX]) {
+    if (**str == get_operator(ops, OP_OPEN_PARENT_IDX)) {
         (*str)++;
         a = parse_expr(str, base, ops);
-        (*str)++;
+        if (**str == get_operator(ops, OP_CLOSE_PARENT_IDX))
+            (*str)++;
         return a;
     } else {
         a = parse_number(str, base);

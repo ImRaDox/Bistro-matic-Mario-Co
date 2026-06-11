@@ -2,5 +2,6 @@
 calc
 *.gcda
 *.gcno
+*.c.gcov
 unit_tests
 libmy.a
