@@ -9,8 +9,8 @@
 
 int main(int argc, char **argv)
 {
-    char *nb1 = "1";
-    char *nb2 = "1";
+    char *nb1 = "3";
+    char *nb2 = "4";
     char *base = "0123456789";
     char *result = NULL;
 

@@ -2,7 +2,7 @@
 
 ## Calculatrice à précision infinie pour expressions mathématiques complexes
 
-Le projet Bistro-matic est un programme en ligne de commande développé en langage C dans le cadre du cursus Unix & C Lab Seminar (B-CPE-101) à Epitech. Son objectif principal est d'évaluer et d'afficher le résultat d'une expression mathématique donnée, composée d'entiers d'une taille théoriquement infinie (gestion de la précision arbitraire) et pouvant être exprimée dans n'importe quelle base numérique.
+Le projet Bistro-matic est un programme en ligne de commande développé en langage C dans le cadre du cursus Unix & C Lab Seminar (B-CPE-210) à Epitech. Son objectif principal est d'évaluer et d'afficher le résultat d'une expression mathématique donnée, composée d'entiers d'une taille théoriquement infinie (gestion de la précision arbitraire) et pouvant être exprimée dans n'importe quelle base numérique.
 
 ---
 
