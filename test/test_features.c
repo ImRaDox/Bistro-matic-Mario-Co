@@ -12,25 +12,43 @@ char *eval_expr(char const *base, char const *ops,
 
 Test(eval_expr, basic_addition)
 {
-    cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "1+1", 3), "2");
+    cr_assert_str_eq(eval_expr("0123456789", "()+-*/%", "1+1", 3), "2");
+}
+
+Test(eval_expr, infinite_addition)
+{
+    cr_assert_str_eq(eval_expr("0123456789", "()+-*/%",
+        "9223372036854775807+1", 21), "9223372036854775808");
 }
 
 Test(eval_expr, basic_multiplication)
 {
-    cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "4*3", 3), "12");
+    cr_assert_str_eq(eval_expr("0123456789", "()+-*/%", "4*3", 3), "12");
+}
+
+Test(eval_expr, infinite_multiplication)
+{
+    cr_assert_str_eq(eval_expr("0123456789", "()+-*/%",
+        "9223372036854775807*2", 21), "18446744073709551614");
 }
 
 Test(eval_expr, basic_subtraction)
 {
-    cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "5-3", 3), "2");
+    cr_assert_str_eq(eval_expr("0123456789", "()+-*/%", "5-3", 3), "2");
+}
+
+Test(eval_expr, infinite_subtraction)
+{
+    cr_assert_str_eq(eval_expr("0123456789", "()+-*/%",
+        "9223372036854775808-1", 21), "9223372036854775807");
 }
 
 Test(eval_expr, operator_priority)
 {
-    cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "2+3*4", 5), "14");
+    cr_assert_str_eq(eval_expr("0123456789", "()+-*/%", "2+3*4", 5), "14");
 }
 
 Test(eval_expr, expression_with_parentheses)
 {
-    cr_assert_str_eq(eval_expr("0123456789", "+-*/%", "(2+3)*4", 7), "20");
+    cr_assert_str_eq(eval_expr("0123456789", "()+-*/%", "(2+3)*4", 7), "20");
 }

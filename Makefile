@@ -57,7 +57,8 @@ fonctions_tests:
 	$(MAKE) -C $(FUNC_TESTS_DIR)
 
 tests_run: $(NAME) $(NAME_TESTS) fonctions_tests
-	-./$(NAME_TESTS)
+	find . -name "*.gcda" -delete
+	./$(NAME_TESTS) -j1
 	@echo "--- Statistiques de Couverture ---"
 	$(LLVM_COV) gcov $(COVERAGE_FILES) --branch-counts --branch-probabilities
 	@echo "----------------------------------"

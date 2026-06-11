@@ -4,4 +4,5 @@ calc
 *.gcno
 *.c.gcov
 unit_tests
+test_fonctions
 libmy.a
