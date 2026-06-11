@@ -39,6 +39,8 @@ char *my_add(char *nb1, char *nb2, char const *base);
 
 char *my_sub(char *nb1, char *nb2, char const *base);
 
+char *my_mul(char *nb1, char *nb2, char const *base);
+
 char *parse_number(char **str, char const *base);
 
 char *parse_term(char **str, char const *base, char const *ops);

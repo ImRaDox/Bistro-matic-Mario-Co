@@ -22,6 +22,7 @@ PARS_DIR = src/parser/
 SRC = $(SRC_DIR)eval_expr.c   \
 	  $(OPE_DIR)add.c\
 	  $(OPE_DIR)sub.c\
+	  $(OPE_DIR)mul.c\
 	  $(OPE_DIR)operation_utils.c\
 	  $(PARS_DIR)parse_expr.c\
 	  $(PARS_DIR)parse_factor.c\
