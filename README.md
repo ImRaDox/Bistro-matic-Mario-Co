@@ -1,57 +1,37 @@
 # Bistro-matic
 
- Bistro-matic est un projet de développement logiciel consistant à concevoir une calculatrice de base capable de gérer des expressions mathématiques complexes.
+## Calculatrice à précision infinie pour expressions mathématiques complexes
+
+Le projet Bistro-matic est un programme en ligne de commande développé en langage C dans le cadre du cursus Unix & C Lab Seminar (B-CPE-101) à Epitech. Son objectif principal est d'évaluer et d'afficher le résultat d'une expression mathématique donnée, composée d'entiers d'une taille théoriquement infinie (gestion de la précision arbitraire) et pouvant être exprimée dans n'importe quelle base numérique.
 
 ---
 
-## Objectifs du Projet
+## Fonctionnalités
 
- Le but principal de ce programme est d'évaluer et d'afficher le résultat d'une expression mathématique donnée.
-
-*  **Entiers infinis** : L'expression mathématique est composée d'entiers d'une taille potentiellement infinie.
-*  **Bases multiples** : Les nombres peuvent être exprimés dans n'importe quelle base numérique prédéfinie.
-*  **Opérateurs supportés** : Le programme gère les opérateurs standards `+`, `-`, `*`, `/`, `%` ainsi que les parenthèses.
-*  **Priorités d'opérations** : Les priorités mathématiques classiques et l'imbrication des parenthèses sont rigoureusement respectées.
-*  **Exclusion des nombres à virgule** : Le programme ne traite pas les nombres flottants.
-
->  Pour plus d'informations sur le comportement attendu d'un tel outil, vous pouvez consulter le manuel de la commande standard `bc` via la commande `man bc`.
+* **Gestion des entiers infinis** : Le programme dépasse les limites des types de données primitifs du C (comme `int` ou `long long`) en allouant dynamiquement la mémoire nécessaire pour traiter des nombres d'une taille arbitrairement grande.
+* **Bases numériques configurables** : Possibilité d'effectuer des calculs dans n'importe quel système de numération (binaire, octal, décimal, hexadécimal, ou des bases entièrement inventées avec des symboles spécifiques).
+* **Opérateurs personnalisables** : Les symboles représentant les parenthèses et les opérateurs arithmétiques peuvent être redéfinis à la volée lors de l'exécution.
+* **Opérations prises en charge** : Prise en compte de l'addition, la soustraction, la multiplication, la division entière et le modulo. Les nombres à virgule flottante ne sont pas gérés.
+* **Priorités opératoires** : Évaluation rigoureuse des règles de priorité mathématique (priorité de la multiplication et de la division sur l'addition et la soustraction) ainsi que de l'imbrication des parenthèses.
 
 ---
 
-## Contraintes Techniques et Règles de Code
+## Contraintes Techniques
 
-Ce projet impose des restrictions strictes de développement afin de manipuler les flux système et l'allocation dynamique proprement :
+Ce projet impose des restrictions strictes afin de forcer la réimplémentation complète des algorithmes de calcul et de gestion de chaînes :
 
-*  **Langage** : Le projet doit être intégralement développé en langage C.
-*  **Fonctions autorisées** : L'utilisation de la libC est interdite, à l'exception rigoureuse des fonctions système `read`, `write`, `malloc`, `free` et `exit`.
-* **Gestion des erreurs** :
-    *  Toute erreur de syntaxe doit déclencher l'affichage de la chaîne définie par la macro `SYNTAX_ERROR_MSG` sur la sortie d'erreur.
-    *  Tout autre type d'erreur doit déclencher l'affichage de la chaîne définie par la macro `ERROR_MSG` sur la sortie d'erreur.
-    *  En cas d'erreur, le programme doit s'arrêter et retourner le code d'erreur 84.
-    *  Si aucune erreur ne survient durant l'évaluation, le programme se termine avec le code 0.
+* **Fonctions de la LibC autorisées** : Seules les fonctions système `read`, `write`, `malloc`, `free` et `exit` sont permises.
+* **Fonctions interdites** : Tout le reste de la bibliothèque standard est strictement interdit (pas de `printf`, de `strlen`, de fonctions de la bibliothèque `math.h`, etc.).
+* **Structure du dépôt** : L'intégralité des fichiers sources nécessaires doit être incluse dans le rendu, à l'exclusion de tout fichier inutile (fichiers objets `.o`, fichiers temporaires, binaires précompilés). Les éventuelles fonctionnalités bonus doivent être isolées dans un répertoire nommé `bonus`.
 
-### Fichiers fournis
- Les fichiers `main.c` et `bistromatic.h` sont fournis au début du projet.
 ---
 
 ## Compilation
 
- La gestion de la compilation doit être entièrement automatisée à l'aide d'un fichier `Makefile`.
-
-Le `Makefile` doit obligatoirement inclure les règles de base suivantes :
-*  `clean` : Supprime les fichiers intermédiaires et inutiles.
-*  `fclean` : Supprime les fichiers objets ainsi que le binaire final.
-*  `re` : Exécute une recompilation complète en chaînant les règles `fclean`,  compilation et `clean`.
-
- Le nom du binaire final généré à la racine du projet est `calc`.
-
----
-
-## Utilisation
-
- L'exécution du binaire s'effectue en lui passant l'expression mathématique via l'entrée standard (stdin) et en fournissant trois arguments spécifiques en ligne de commande.
+La compilation du projet s'effectue via un fichier `Makefile` qui doit obligatoirement inclure les règles standard suivantes :
 
 ```bash
-./calc base 'operators' size_read
-
-./calc 0123456789 ‘()+-*/%’ 3
+make          # Compile les sources et génère le binaire nommé calc
+make clean    # Supprime les fichiers objets et les fichiers temporaires
+make fclean   # Supprime les fichiers objets ainsi que le binaire final calc
+make re       # Force une recompilation complète (fclean suivi de make)
