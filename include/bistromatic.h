@@ -30,4 +30,18 @@
 
 char *eval_expr(char const *base, char const *ops,
     char const *expr, unsigned int size);
+
+char get_operator(char const *ops, int index);
+
+char *parse_expr(char **str, char const *base, char const *ops);
+
+char *my_add(char *nb1, char *nb2, char const *base);
+
+char *my_sub(char *nb1, char *nb2, char const *base);
+
+char *parse_number(char **str, char const *base);
+
+char *parse_term(char **str, char const *base, char const *ops);
+
+char *parse_factor(char **str, char const *base, char const *ops);
 #endif

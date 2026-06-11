@@ -1,6 +1,6 @@
 /*
-** EPITECH PROJECT, 2025
-** my
+** EPITECH PROJECT, 2026
+** Bistro-matic-Mario-Co
 ** File description:
 ** my_atoi
 */

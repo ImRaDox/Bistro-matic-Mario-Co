@@ -1,5 +1,7 @@
 *.o
 calc
-.gcda
-.gcno
+*.gcda
+*.gcno
+*.c.gcov
+unit_tests
 libmy.a

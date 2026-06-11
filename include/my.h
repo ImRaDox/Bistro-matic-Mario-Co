@@ -39,6 +39,7 @@ int my_strncmp(char const *s1, char const *s2, int n);
 int my_strcasecmp(char const *s1, char const *s2);
 char *my_strstr(char const *hay, char const *needle);
 char *my_strjoin(char const *s1, char const *s2);
+char *my_revstr(char *str);
 int my_str_isnum(char const *str);
 int my_str_contains(char const *str, char c);
 char *my_strtrim(char const *str);
@@ -87,6 +88,8 @@ int my_abs(int n);
 int my_max(int a, int b);
 int my_min(int a, int b);
 int my_power(int base, int exp);
+int get_index_in_base(char c, char const *base);
+int get_digit_val(char *nb, int len, int i, char const *base);
 
 /* ===== ERROR ===== */
 int my_puterr(char const *msg);

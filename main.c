@@ -120,7 +120,6 @@ int main(int ac, char **av)
     check_base(av[1], av[2]);
     size = my_atoi(av[3]);
     expr = get_expr(size);
-    my_putstr(eval_expr(av[1], av[2], expr, size));
-    free(expr);
+    my_printf("%s\n", eval_expr(av[1], av[2], expr, size));
     return (EXIT_SUCCESS);
 }
