@@ -28,6 +28,7 @@ SRC = $(SRC_DIR)eval_expr.c   \
 	  $(PARS_DIR)parse_factor.c\
 	  $(PARS_DIR)parse_number.c\
 	  $(PARS_DIR)parse_term.c\
+	  $(PARS_DIR)utils_parser.c
 	  
 MAIN_SRC = main.c
 TESTS_DIR = test/
