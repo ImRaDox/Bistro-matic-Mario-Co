@@ -48,4 +48,6 @@ char *parse_number(char **str, char const *base);
 char *parse_term(char **str, char const *base, char const *ops);
 
 char *parse_factor(char **str, char const *base, char const *ops);
+
+void skip_spaces(char **str);
 #endif
