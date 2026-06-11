@@ -11,10 +11,10 @@ int my_strchr(char const *str, int c)
 {
     while (*str) {
         if (*str == c)
-            return 1;
+            return EXIT_CONDITION;
         str++;
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 char *parse_number(char **str, char const *base)

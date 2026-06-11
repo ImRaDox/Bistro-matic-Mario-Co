@@ -24,6 +24,8 @@
     #define EXIT_MALLOC 84
     #define EXIT_READ 84
     #define EXIT_OPS 84
+    #define EXIT_SUCCESS 0
+    #define EXIT_CONDITION 1
 
     #define SYNTAX_ERROR_MSG "syntax error"
     #define ERROR_MSG "error"
