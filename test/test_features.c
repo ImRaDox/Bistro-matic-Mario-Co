@@ -6,9 +6,7 @@
 */
 
 #include "criterion/criterion.h"
-
-char *eval_expr(char const *base, char const *ops,
-    char const *expr, unsigned int size);
+#include "bistromatic.h"
 
 Test(eval_expr, basic_addition)
 {
@@ -18,7 +16,7 @@ Test(eval_expr, basic_addition)
 Test(eval_expr, infinite_addition)
 {
     cr_assert_str_eq(eval_expr("0123456789", "()+-*/%",
-        "9223372036854775807+1", 21), "9223372036854775808");
+            "9223372036854775807+1", 21), "9223372036854775808");
 }
 
 Test(eval_expr, basic_multiplication)
@@ -29,7 +27,7 @@ Test(eval_expr, basic_multiplication)
 Test(eval_expr, infinite_multiplication)
 {
     cr_assert_str_eq(eval_expr("0123456789", "()+-*/%",
-        "9223372036854775807*2", 21), "18446744073709551614");
+            "9223372036854775807*2", 21), "18446744073709551614");
 }
 
 Test(eval_expr, basic_subtraction)
@@ -40,7 +38,7 @@ Test(eval_expr, basic_subtraction)
 Test(eval_expr, infinite_subtraction)
 {
     cr_assert_str_eq(eval_expr("0123456789", "()+-*/%",
-        "9223372036854775808-1", 21), "9223372036854775807");
+            "9223372036854775808-1", 21), "9223372036854775807");
 }
 
 Test(eval_expr, operator_priority)
