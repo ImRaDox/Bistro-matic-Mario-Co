@@ -28,9 +28,8 @@ char *my_sub(char *nb1, char *nb2, char const *base)
     int i = 0;
     int d1 = 0;
     int d2 = 0;
-    char *result = NULL;
+    char *result = malloc(sizeof(char) * (len1 + 1));
 
-    result = malloc(sizeof(char) * (len1 + 1));
     if (!result)
         return NULL;
     for (; i < len1; i++) {
