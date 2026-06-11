@@ -11,9 +11,11 @@ char *parse_factor(char **str, char const *base, char const *ops)
 {
     char *a;
 
+    skip_spaces(str);
     if (**str == get_operator(ops, OP_OPEN_PARENT_IDX)) {
         (*str)++;
         a = parse_expr(str, base, ops);
+        skip_spaces(str);
         if (**str == get_operator(ops, OP_CLOSE_PARENT_IDX))
             (*str)++;
         return a;
